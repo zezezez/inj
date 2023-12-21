@@ -112,7 +112,7 @@ const Minter: React.FC = () => {
 
       //"https://sentry.lcd.injective.network:443"
       const queryClient = await getQueryClient(
-        "https://inj-tendermint.nownodes.io/51d010e6-118d-4103-a106-eacd42181d29"
+        "https://inj.nownodes.io/51d010e6-118d-4103-a106-eacd42181d29"
       );
       const result = await queryClient.cosmos.bank.v1beta1.balance({
         address: address.address,
