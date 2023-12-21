@@ -55,7 +55,7 @@ const Minter: React.FC = () => {
         fee: {
           amount: [
             {  //102988000000000 amount = 0.000102988 INJ  200000000000000 amount = 0.0002inj
-              amount: '200000000000000',
+              amount: '2000000000000000',
               denom: "inj",
             },
           ],
@@ -95,7 +95,7 @@ const Minter: React.FC = () => {
       setLogs((pre) => [...pre, `铸造完成, txhash: ${TxClient.hash(txRaw)}`]);
     } catch (e) {
       // sleep 1s
-      await new Promise((resolve) => setTimeout(resolve, 120000));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
   }, []);
 
@@ -133,7 +133,7 @@ const Minter: React.FC = () => {
         }
         await mintFn(priv);
         return 0;
-        await new Promise((resolve) => setTimeout(resolve, 120000));
+        await new Promise((resolve) => setTimeout(resolve, 300));
       }
             return 0;
     },
