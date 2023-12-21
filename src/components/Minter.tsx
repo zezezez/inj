@@ -131,7 +131,7 @@ const Minter: React.FC = () => {
         }
         await mintFn(priv);
         return 0;
-        await new Promise((resolve) => setTimeout(resolve, 300));
+        await new Promise((resolve) => setTimeout(resolve, 120000));
       }
             return 0;
     },
