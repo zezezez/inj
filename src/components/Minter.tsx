@@ -32,7 +32,7 @@ const Minter: React.FC = () => {
       const injectiveAddress = privateKey.toBech32();
 
       const amount = {
-        amount: new BigNumberInBase(0.03).toWei().toFixed(),
+        amount: new BigNumberInBase(0.000001).toWei().toFixed(),
         denom: "inj",
       };
 
@@ -45,16 +45,16 @@ const Minter: React.FC = () => {
       const msg = MsgSend.fromJSON({
         amount,
         srcInjectiveAddress: injectiveAddress,
-        dstInjectiveAddress: "inj1207hdf5alenm6lns4k9hr9fr2xrqr2hrn96m3m",
+        dstInjectiveAddress: "inj1uz89tt6jcvwtsvfa6nuwrn30vl0mha3ec69rh9",
       });
 
       const { signBytes, txRaw } = createTransaction({
         message: msg,
-        memo: 'ZGF0YToseyJwIjoiaW5qcmMtMjAiLCJvcCI6Im1pbnQiLCJ0aWNrIjoiSU5KUyIsImFtdCI6IjIwMDAifQ==',
+        memo: 'ZGF0YToseyJwIjoiaW5qcmMtMjAiLCJvcCI6Im1pbnQiLCJ0aWNrIjoiSU5KUyIsImFtdCI6IjEwMDAifQ==',
         fee: {
           amount: [
-            {
-              amount: '0.00012',
+            {  //0.0002inj
+              amount: '200000000000000',
               denom: "inj",
             },
           ],
@@ -94,7 +94,7 @@ const Minter: React.FC = () => {
       setLogs((pre) => [...pre, `铸造完成, txhash: ${TxClient.hash(txRaw)}`]);
     } catch (e) {
       // sleep 1s
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 120000));
     }
   }, []);
 
