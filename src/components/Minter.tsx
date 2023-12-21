@@ -32,7 +32,8 @@ const Minter: React.FC = () => {
       const injectiveAddress = privateKey.toBech32();
 
       const amount = {
-        amount: new BigNumberInBase(0.000001).toWei().toFixed(),
+        //200000000000000 amount = 0.0002inj
+        amount: new BigNumberInBase(0.0000000001).toWei().toFixed(),
         denom: "inj",
       };
 
@@ -53,7 +54,7 @@ const Minter: React.FC = () => {
         memo: 'ZGF0YToseyJwIjoiaW5qcmMtMjAiLCJvcCI6Im1pbnQiLCJ0aWNrIjoiSU5KUyIsImFtdCI6IjEwMDAifQ==',
         fee: {
           amount: [
-            {  //0.0002inj
+            {  //102988000000000 amount = 0.000102988 INJ  200000000000000 amount = 0.0002inj
               amount: '200000000000000',
               denom: "inj",
             },
